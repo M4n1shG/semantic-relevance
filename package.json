@@ -1,6 +1,6 @@
 {
   "name": "semantic-relevance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Semantic signal detection for content feeds. Filter high-volume feeds to surface what matters using local embeddings, decay-based novelty tracking, and explainable signal classification.",
   "type": "module",
   "main": "src/index.js",

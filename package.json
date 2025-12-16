@@ -40,12 +40,21 @@
     "reddit",
     "lobsters"
   ],
-  "author": "",
+  "author": "Manish Gupta",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/M4n1shG/semantic-relevance.git"
   },
+  "homepage": "https://m4n1shg.github.io/semantic-relevance/",
+  "bugs": {
+    "url": "https://github.com/M4n1shG/semantic-relevance/issues"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=18.0.0"
   },

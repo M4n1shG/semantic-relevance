@@ -352,7 +352,7 @@ semantic-relevance/
 
 ## Demo
 
-Try the live demo at [m-verse.com/playground/semantic-relevance](https://m-verse.com/playground/semantic-relevance) or run locally:
+Try the live demo at [m4n1shg.github.io/semantic-relevance](https://m4n1shg.github.io/semantic-relevance/) or run locally:
 
 ```bash
 npm run dev      # Start development server

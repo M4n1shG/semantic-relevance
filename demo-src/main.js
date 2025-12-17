@@ -78,6 +78,18 @@ document.querySelectorAll('.panel-toggle').forEach((btn) => {
   btn.addEventListener('click', () => btn.closest('.collapsible-panel')?.classList.toggle('open'));
 });
 
+// On mobile, collapse all panels except Actions by default
+function initMobilePanels() {
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.collapsible-panel').forEach((panel) => {
+      if (panel.dataset.panel !== 'actions') {
+        panel.classList.remove('open');
+      }
+    });
+  }
+}
+initMobilePanels();
+
 // ============================================================
 // Sliders
 // ============================================================

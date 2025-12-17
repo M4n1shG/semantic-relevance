@@ -661,24 +661,130 @@ body {
   .canvas-area { left: 260px; }
 }
 
-@media (max-width: 700px) {
-  .panels-left {
-    position: fixed;
+@media (max-width: 768px) {
+  html, body { overflow: auto; }
+
+  /* Hide fixed corner elements on mobile */
+  .panel-topleft,
+  .panel-topcenter,
+  .panel-bottomleft,
+  .branding-link {
+    position: relative;
     top: auto;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: auto;
-    max-height: 50vh;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: var(--space-2);
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+  }
+
+  /* Mobile header */
+  .panel-topleft {
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border-panel);
+  }
+
+  .panel-topcenter {
+    display: none;
+  }
+
+  .panel-bottomleft {
+    display: none;
+  }
+
+  .branding-link {
+    display: block;
+    text-align: center;
+    padding: var(--space-4);
     background: var(--bg-panel);
     border-top: 1px solid var(--border-panel);
   }
+
+  /* Stack panels vertically */
+  .panels-left {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    bottom: auto;
+    padding: var(--space-3);
+    overflow: visible;
+    gap: var(--space-3);
+  }
+
+  /* Make canvas area flow normally */
   .canvas-area {
-    left: var(--space-2);
-    bottom: 50vh;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: var(--space-3);
+    min-height: auto;
+  }
+
+  /* Single column grid on mobile */
+  .signals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Smaller empty state */
+  .empty-state {
+    min-height: 300px;
+    padding: var(--space-6);
+  }
+
+  #results .loading {
+    min-height: 300px;
+  }
+
+  /* Collapse all panels except Actions by default on mobile */
+  .collapsible-panel[data-panel="context"],
+  .collapsible-panel[data-panel="sources"],
+  .collapsible-panel[data-panel="filters"],
+  .collapsible-panel[data-panel="novelty"] {
+    /* Will be handled by JS to collapse on mobile */
+  }
+
+  /* Signal cards adjustments */
+  .signal-card {
+    padding: var(--space-4);
+  }
+
+  .signal-header {
+    gap: var(--space-1);
+  }
+
+  .signal-meta {
+    gap: var(--space-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 12px;
+  }
+
+  .version-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .control-textarea {
+    font-size: 11px;
+  }
+
+  .signals-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .signal-type,
+  .signal-source,
+  .signal-recency,
+  .novelty-badge {
+    font-size: 9px;
+    padding: 2px 4px;
   }
 }
